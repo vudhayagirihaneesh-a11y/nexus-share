@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XferFlow - Fast, Zero-Retention P2P File Sharing</title>
+    <meta name="description" content="XferFlow is a zero-retention, fully encrypted peer-to-peer file sharing web application. Send large files directly between devices without servers or tracking." />
+    <meta name="keywords" content="P2P file sharing, WebRTC, zero-retention, encrypted file transfer, fast file share, peer-to-peer, XferFlow" />
+    <meta property="og:title" content="XferFlow - Fast, Zero-Retention P2P File Sharing" />
+    <meta property="og:description" content="Send large files securely and instantly between devices with zero tracking and no server storage." />
+    <meta property="og:type" content="website" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-dXcuC6Av.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C8bGYQL7.css">
+  </head>
+  <body>
+    <!-- ============================================== -->
+    <!-- LANDING PAGE (Full Width)                      -->
+    <!-- ============================================== -->
+    <div id="view-landing" class="landing-wrapper">
+      <!-- Navbar -->
+      <nav class="landing-nav">
+        <h1 class="logo">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2m5.66 0H14a2 2 0 0 1 2 2v3.34l1 1L23 7v10l-6-6-1 1z"/></svg>
+          XferFlow
+        </h1>
+        <button id="btn-nav-launch" class="btn primary">Launch App</button>
+      </nav>
+
+      <!-- Hero Section -->
+      <header class="landing-hero">
+        <div class="hero-badge">v2.0 Turbo Edition</div>
+        <h1 class="landing-title">The Future of File Sharing is <br/><span class="gradient-text">Zero-Retention</span></h1>
+        <p class="landing-subtitle">Transfer files of infinite size instantly between any devices. No servers, no tracking, just pure encrypted peer-to-peer connection.</p>
+        <button id="btn-hero-launch" class="btn primary massive-cta">Get Started Now</button>
+      </header>
+
+
+
+      <!-- Features Grid -->
+      <section class="landing-features">
+        <h2 class="section-title">Built for Performance & Privacy</h2>
+        <div class="features-grid">
+          <div class="feature-item glass">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Absolute Zero Retention</h3>
+            <p>Your files flow directly through your local network or cell towers. They never touch our servers, ensuring absolute privacy.</p>
+          </div>
+          <div class="feature-item glass">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Infinite Transfer Size</h3>
+            <p>Because there is no server middleman, there are no artificial limits. Send 5TB files as easily as a 5MB photo.</p>
+          </div>
+          <div class="feature-item glass">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <h3>Two Ways to Connect</h3>
+            <p>Local Network Radar, or a secure 4-digit Web Code for long distance.</p>
+          </div>
+          <div class="feature-item glass">
+            <div class="feature-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <h3>Military-Grade Encryption</h3>
+            <p>Every file is chopped into chunks and secured using WebCrypto AES-GCM encryption before it even leaves your browser.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quotation / Mission -->
+      <section class="landing-quote-section glass" style="margin-top: 3rem;">
+        <blockquote>
+          "The best connections are the ones you don't even have to think about."
+        </blockquote>
+      </section>
+
+      <!-- Footer -->
+      <footer class="landing-footer">
+        <p>&copy; 2026 XferFlow. Built for the open web.</p>
+      </footer>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- THE APPLICATION (Centered Card)                -->
+    <!-- ============================================== -->
+    <div id="app-wrapper" class="app-container hidden">
+      <header>
+        <h1>XferFlow</h1>
+        <p>Zero-Retention P2P Encrypted Transfer</p>
+      </header>
+
+      <main>
+        <!-- View 1: Home — Send or Receive -->
+        <section id="view-home" class="card glass">
+          <h2 class="centered">What would you like to do?</h2>
+          <div class="role-buttons">
+            <button id="btn-role-send" class="btn primary massive-btn">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+              <span>Send</span>
+            </button>
+            <button id="btn-role-receive" class="btn secondary massive-btn">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              <span>Receive</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- View 2: File Selection (Send) -->
+        <section id="view-file-select" class="card glass hidden">
+          <h2>Select Files to Send</h2>
+          <div class="file-drop-area" id="file-drop-area">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="1.5" style="margin-bottom:0.5rem"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            <p>Drag &amp; Drop files or folders</p>
+            <input type="file" id="file-input" class="hidden" multiple />
+            <input type="file" id="folder-input" class="hidden" webkitdirectory directory multiple />
+            <div class="button-group" style="margin-top:1rem">
+              <button id="btn-select-file" class="btn primary">Browse Files</button>
+              <button id="btn-select-folder" class="btn secondary">Browse Folder</button>
+            </div>
+          </div>
+          <div id="selected-files-list" class="selected-files-summary"></div>
+          <div class="view-footer">
+            <button id="btn-cancel-send" class="btn secondary">Cancel</button>
+            <button id="btn-next-method" class="btn primary hidden">Next →</button>
+          </div>
+        </section>
+
+        <!-- View 3: Choose Method -->
+        <section id="view-method" class="card glass hidden">
+          <h2 class="centered">How do you want to connect?</h2>
+          <div class="method-buttons">
+            <button id="btn-method-radar" class="method-card">
+              <div class="method-icon" style="background:rgba(16,185,129,0.15);color:#10b981;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <span class="method-title">Local Radar</span>
+              <span class="method-desc">Scan Local Network</span>
+            </button>
+
+            <button id="btn-method-otp" class="method-card">
+              <div class="method-icon otp-icon" style="background:rgba(236,72,153,0.15);color:#ec4899;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+              </div>
+              <span class="method-title">Web Code</span>
+              <span class="method-desc">Anywhere (4-Digit)</span>
+            </button>
+          </div>
+          <div class="view-footer">
+            <button id="btn-back-method" class="btn secondary">← Back</button>
+          </div>
+        </section>
+
+        <!-- View 4b: Radar Discovery -->
+        <section id="view-radar" class="card glass hidden">
+          <h2 id="radar-heading" class="centered">Local Network Radar</h2>
+          <p id="radar-status" class="status-msg">Scanning for users on the same Wi-Fi...</p>
+          <div class="radar-animation">
+            <div class="radar-blip"></div>
+          </div>
+          <div id="radar-peers-container" class="radar-peers"></div>
+          <div class="view-footer centered">
+            <button id="btn-cancel-radar" class="btn secondary">Cancel</button>
+          </div>
+        </section>
+
+        <!-- View 4c: OTP Code (Long Distance) -->
+        <section id="view-otp" class="card glass hidden">
+          <h2 id="otp-heading" class="centered">Web Code Transfer</h2>
+          <p id="otp-status" class="status-msg">Share this one-time code with the receiver.</p>
+
+          <div id="otp-sender-view" class="hidden centered" style="margin:2rem 0">
+            <div id="otp-display" style="font-family:Outfit,sans-serif;font-size:4rem;font-weight:800;letter-spacing:10px;color:var(--primary);text-shadow:0 0 25px rgba(59,130,246,0.6)">----</div>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:1rem">Code is strictly single-use and expires in 5 mins.</p>
+          </div>
+
+          <div id="otp-receiver-view" class="hidden centered" style="margin:2rem 0">
+            <input type="text" id="otp-input" maxlength="4" placeholder="0000" style="font-family:Outfit,sans-serif;font-size:3rem;font-weight:800;letter-spacing:8px;width:200px;text-align:center;background:rgba(15,23,42,0.5);border:2px solid var(--glass-border);border-radius:1rem;color:var(--text-primary);padding:1rem;outline:none;transition:border-color 0.3s ease;" />
+            <button id="btn-connect-otp" class="btn primary" style="margin-top:1.5rem;width:100%;font-size:1.1rem;padding:1rem">Connect securely →</button>
+          </div>
+
+          <div class="view-footer centered">
+            <button id="btn-cancel-otp" class="btn secondary">Cancel</button>
+          </div>
+        </section>
+
+        <!-- View 5: Transfer Progress -->
+        <section id="view-transfer" class="card glass hidden">
+          <h2 id="transfer-heading" class="centered">Transferring</h2>
+          <div class="peer-status">
+            <span class="indicator connected"></span> Secure E2EE Channel Active
+          </div>
+          <div id="transfer-progress-container">
+            <p id="transfer-filename" class="transfer-filename"></p>
+            <div class="progress-ring-container">
+              <svg class="progress-ring" width="140" height="140">
+                <circle class="progress-ring__circle_bg" stroke="rgba(255,255,255,0.08)" stroke-width="10" fill="transparent" r="60" cx="70" cy="70"/>
+                <circle id="progress-ring-circle" class="progress-ring__circle" stroke="url(#pg)" stroke-width="10" fill="transparent" r="60" cx="70" cy="70" stroke-linecap="round"/>
+                <defs><linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+              </svg>
+              <div class="progress-ring-text"><span id="transfer-percentage">0%</span></div>
+            </div>
+            <div class="transfer-metrics">
+              <span id="transfer-speed">0 MB/s</span>
+              <span id="transfer-eta">ETA: --:--</span>
+            </div>
+          </div>
+          <div class="view-footer centered">
+            <button id="btn-transfer-done" class="btn primary hidden">Done</button>
+          </div>
+        </section>
+
+        <!-- Permission Modal -->
+        <div id="permission-modal" class="modal hidden">
+          <div class="modal-content glass">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.5" style="margin-bottom:1rem"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            <h3 style="margin-bottom:0.5rem">Incoming Transfer</h3>
+            <p id="permission-text" style="color:var(--text-secondary);margin-bottom:2rem"></p>
+            <div class="button-group">
+              <button id="btn-decline" class="btn secondary">Decline</button>
+              <button id="btn-accept" class="btn accept-btn">Accept</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>
