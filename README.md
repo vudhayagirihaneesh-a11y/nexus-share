@@ -1,50 +1,82 @@
-# Nexus Share / XferFlow
+<div align="center">
+  <img src="frontend/public/favicon.svg" alt="Nexus Share Logo" width="120" />
 
-A fully peer-to-peer (P2P), browser-based file sharing application that utilizes WebRTC for direct data transfer and end-to-end encryption. The project consists of a modern Vite/TypeScript frontend and a lightweight PHP backend acting as a polling-based signaling server.
+  # ⚡️ Nexus Share 
+  
+  **Blazing-fast, peer-to-peer file sharing right from your browser.**
 
-## Features
+  [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+  [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+  [![WebRTC](https://img.shields.io/badge/WebRTC-333333?style=for-the-badge&logo=webrtc&logoColor=white)](https://webrtc.org/)
+  [![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net/)
 
-- **Peer-to-Peer Transfer**: Files are sent directly between browsers using WebRTC Data Channels. They do not pass through or sit on any central server.
-- **End-to-End Encryption**: Leverages Web Crypto API (`crypto.ts`) to ensure payloads remain secure during transit.
-- **Radar & Discovery**: Uses a built-in radar system (`api.php` radar endpoints) to easily discover other devices on the same network or session.
-- **OTP-based Pairing**: Generate one-time passcodes (OTP) for secure out-of-band session handshakes.
-- **Lightweight Backend**: A single `api.php` file manages signaling via JSON-based file polling, requiring zero WebSockets or complex database infrastructure. Ideal for shared hosting environments (like InfinityFree).
+  <i>Secure. Limitless. Effortless.</i>
+</div>
 
-## Architecture
+---
 
-1. **Signaling Server (`api.php`)**
-   - Handles `radar-join`, `radar-leave`, and `radar` updates to show active peers.
-   - Handles `generate-otp` and `claim-otp` to securely link two peers.
-   - Manages asynchronous SDP (Session Description Protocol) offer/answer exchanges and ICE candidates through a basic HTTP polling loop.
+## 🚀 Why Nexus Share?
 
-2. **Frontend (`/frontend`)**
-   - Built with **Vite** and **TypeScript**.
-   - `webrtc.ts`: Manages the RTCPeerConnection and RTCDataChannel lifecycle.
-   - `crypto.ts`: Encrypts file chunks before transmission and decrypts them upon receipt.
-   - Includes a Service Worker (`sw.js`) and Web Manifest (`manifest.json`) for potential PWA capabilities.
+Forget clunky cloud drives and artificial file limits. **Nexus Share** connects devices directly using **WebRTC Data Channels**, ensuring that your files go exactly where they need to—without ever touching a middleman server. 
 
-## Setup & Installation
+Whether you're sharing gigabytes of video or a single sensitive document, Nexus Share keeps it completely peer-to-peer and mathematically secure.
 
-### Backend
-1. Deploy the root directory (`api.php`, `sessions/`) to any PHP 7.4+ capable web server.
-2. Ensure the `sessions/` directory is writable by the web server (permissions `0777` or equivalent), as the server writes `.jsonl` files to manage active signals.
+## ✨ Supercharged Features
 
-### Frontend
-1. Navigate to the `frontend/` directory.
+- 🔗 **True Peer-to-Peer**: Direct device-to-device transfers. No servers, no storage limits, no bottlenecks.
+- 🔒 **End-to-End Encrypted**: Files are sealed using the powerful Web Crypto API (`crypto.ts`) before they even leave your browser. 
+- 📡 **Local Radar**: Instantly discover other devices on the same network using our intuitive Radar system.
+- 🔑 **Secure OTP Handshakes**: Connecting across the internet? Generate a unique code to securely pair devices anywhere on the globe.
+- 🛠 **Zero-Config Backend**: Powered by a hyper-lightweight PHP polling architecture (`api.php`). No websockets, no databases—just drop it into any shared hosting environment and you're live.
+
+---
+
+## 🏗 System Architecture
+
+Nexus Share is beautifully split into a lightning-fast modern frontend and a rock-solid, minimalist backend.
+
+### 🎨 The Frontend (`/frontend`)
+Crafted with **Vite** and **TypeScript** for an ultra-fast developer experience.
+- **`webrtc.ts`**: The engine. Handles the complex NAT-traversal and RTCPeerConnection magic.
+- **`crypto.ts`**: The vault. Ensures absolute privacy with chunk-based encryption.
+- **PWA Ready**: Equipped with a Service Worker (`sw.js`) and web manifest.
+
+### ⚙️ The Backend
+A singular, incredibly efficient `api.php` file acts as the ultimate traffic controller.
+- Facilitates the initial SDP Offer/Answer and ICE candidate exchanges.
+- Powers the Radar system to broadcast local presences.
+- Manages secure OTP generation for global pairing.
+
+---
+
+## 🚦 Get Up and Running
+
+Ready to host your own file-sharing nexus? It only takes a minute.
+
+### 1️⃣ The Backend
+Got shared hosting? You're already done.
+- Upload `api.php` and the `sessions/` folder to your PHP 7.4+ web server.
+- **Crucial:** Make sure the `sessions/` directory is writable (`chmod 777`).
+
+### 2️⃣ The Frontend
+1. Dive into the frontend folder:
    ```bash
    cd frontend
    npm install
    ```
-2. Start the development server:
+2. Start the Vite dev server to see it in action:
    ```bash
    npm run dev
    ```
-3. Build for production:
+3. When you're ready for production:
    ```bash
    npm run build
    ```
-   *The built assets can then be hosted statically alongside the `api.php` file.*
+   *Simply host the generated static assets on any CDN, Vercel, Netlify, or alongside your PHP backend!*
 
-## License
+---
 
-Proprietary. All rights reserved.
+<div align="center">
+  <b>Built for a faster, decentralized web.</b> <br>
+  <i>Proprietary software. All rights reserved.</i>
+</div>
